@@ -1,0 +1,24 @@
+{% extends "shop/base.html/" %}
+{% block title %} Каталог {% endblock %}
+{% block content %}
+<h1>{{products.name}}</h1>
+<div class="container">
+    <h1>Заголовок</h1>
+    <div class="d-flex justify-content-between">
+        <div class="card-body">
+            <h5 class="card-title fs-1">{{products.name}}</h5>
+            <p class="card-text">{{products.discription}}</p>
+            {%if product.is_avaiable%}
+            <h2 href="#" class="btn btn-outline-secondary">Недоступно</h2>
+            {%else%}
+            <h2 href="#" class="btn btn-outline-secondary">В наличии</h2>
+            {%endif%}
+        </div>
+        <div class="w-50">
+            <img src="{{products.image.url}}" class="" style="width: 60%;" alt="...">
+            <h2 class="card-rating w-25">{{products.rating}}</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+тайлвинд
