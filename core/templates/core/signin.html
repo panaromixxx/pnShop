@@ -1,0 +1,12 @@
+{% extends "core/base.html/" %}
+{% load static %}
+{% block title %} Форма входа {% endblock %}
+{% block content %}
+<form class="panarama-form vertical-center">
+    {% csrf_token %}
+    <label>Вход</label>
+    <input type="email" class="panarama-input" placeholder="Электронная почта" name="email"/>
+    <input type="password" class="panarama-input" placeholder="Пароль" name="password"/>
+    <button class="panarama-button" type="submit">Войти</button>
+</form>
+{% endblock %}

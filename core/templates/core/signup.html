@@ -1,4 +1,15 @@
 {% extends "core/base.html/" %}
-{% block title %} Каталог {% endblock %}
+{% load static %}
+{% block title %} Форма регистрации {% endblock %}
 {% block content %}
+<form class="panarama-form vertical-center">
+    {% csrf_token %}
+    <label>Регистрация</label>
+    <input type="text" class="panarama-input" placeholder="Ваше имя" name="nickname" />
+    <input type="email" class="panarama-input" placeholder="Электронная почта" name="email" />
+    <input type="password" class="panarama-input" placeholder="Пароль" name="password" />
+    <input type="password" class="panarama-input" placeholder="Повторите пароль" name="password_repeat" />
+    <button class="panarama-button" type="submit">Зарегистрироваться</button>
+    <img src="{% static 'svg/hand.svg' %}" alt="Рука" class="bounce small-svg center-horizontal">
+</form>
 {% endblock %}

@@ -1,13 +1,11 @@
 {% extends "core/base.html/" %}
 {% block title %} Каталог {% endblock %}
 {% block content %}
-<h1>{{products.name}}</h1>
 <div class="container">
-    <h1>Заголовок</h1>
     <div class="d-flex justify-content-between">
         <div class="card-body">
             <h5 class="card-title fs-1">{{products.name}}</h5>
-            <p class="card-text">{{products.discription}}</p>
+            <p class="card-text">Описание товара: {{products.discription}}</p>
             {% if products.is_avaiable %}
             <a href="{%url 'create_order' product_id=products.id%}" class="btn btn-outline-secondary">Недоступно</a>
             {% else %}
@@ -15,10 +13,24 @@
             {% endif %}
         </div>
         <div class="w-50">
+            <section class="video">
+                <video id="myVideo" autoplay muted loop>
+                    <source src="video/video1.mp4" type="video/mp4">
+                </video>
+                <div class="video__content">
+                    <div class="container">
+                    <h1 class="video__tittle">Заголовок</h1>
+                    <p class="video__text">Описание</p>
+                    <button class="video__btn" id="play" onclick="play()">Пауза</button>
+                    <button class="video__btn" id="mute" onclick="mute()">Вкл.</button>
+                    <button class="video__btn" onclick="prev()">Пред.</button>
+                    <button class="video__btn" onclick="next()">След.</button>
+                    </div>
+                </div>
+            </section>
             <img src="{{products.image.url}}" class="" style="width: 60%;" alt="...">
-            <h2 class="card-rating w-25">{{products.rating}}</h2>
+            <h2 class="card-rating w-25">Рейтинг: {{products.rating}}</h2>
         </div>
     </div>
 </div>
 {% endblock %}
-тайлвинд
